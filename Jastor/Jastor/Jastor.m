@@ -138,11 +138,10 @@ Class nsArrayClass;
 }
 
 - (BOOL)isEqual:(id)object {
-	if (object == nil || ![object isKindOfClass:[Jastor class]]) return NO;
-	
-	Jastor *model = (Jastor *)object;
-	
-	return [self.objectId isEqualToString:model.objectId];
+    if (object == nil || ![object isKindOfClass:[Jastor class]] || ![self isKindOfClass:[object class]]) return NO;
+    Jastor *model = (Jastor *)object;
+    
+    return [self.objectId isEqualToString:model.objectId];
 }
 
 @end
